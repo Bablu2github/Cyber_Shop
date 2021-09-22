@@ -12,9 +12,9 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('username', 'password', 'email', 'token', 'token_expires_at')
 
-class UserSignUpSerializer(serializers.Modelserializer):
-    password = serializers.Charfield(write_only=True)
-    token = serializers.Charfield(read_only=True)
+class UserSignUpSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+    token = serializers.CharField(read_only=True)
     token_expires_at = serializers.DateTimeField(read_only=True)
 
     class Meta:

@@ -1,4 +1,4 @@
-from backend.config.constants import STATUS
+
 from rest_framework import generics
 from .serializers import ItemSerializer
 from django.http import JsonResponse
