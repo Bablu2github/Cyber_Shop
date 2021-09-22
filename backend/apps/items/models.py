@@ -6,7 +6,7 @@ class Item(models.Model):
     class Meta(object):
         db_table = 'item'
     status = models.CharField(
-        'Status', blank=False, max_length=14, db_index=True, default='inactive', choices=STATUS
+        'Status', blank=False, max_length=15, db_index=True, default='inactive', choices=STATUS
     )
     name = models.CharField(
         'Name', blank=False, null=False, max_length=14, db_index=True, default='Anonymous'
