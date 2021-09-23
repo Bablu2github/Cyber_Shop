@@ -3,6 +3,7 @@ from rest_framework import generics
 from .serializers import ItemSerializer
 from django.http import JsonResponse
 from .models import Item
+from config.constants import *
 
 
 class ItemList(generics.ListAPIView):
