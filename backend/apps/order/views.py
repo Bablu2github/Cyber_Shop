@@ -43,6 +43,3 @@ class OrderAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
             
         serializer = OrderSerializer([order], many=True)
         return Response(serializer.data[0])
-
-
-

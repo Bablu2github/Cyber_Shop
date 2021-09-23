@@ -60,4 +60,4 @@ class UserSignInSerializer(serializers.ModelSerializer):
             return user[0]
         else:
             # Raise error
-            raise serializers.ValidationError({"error": "The password or email is incorrect."})        
+            raise serializers.ValidationError({"error": "The password or email is incorrect."})    

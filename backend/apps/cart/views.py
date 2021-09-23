@@ -56,5 +56,3 @@ class CartUpdate(CustomLoginRequiredMixin, generics.UpdateAPIView):
         cart.save()
         serializer = CartSerializer([cart], many=True)
         return Response(serializer.data[0])
-
-
