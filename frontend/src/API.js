@@ -15,41 +15,19 @@ const api = axios.create({
 });
 
 export default class API {
-    getPosts = async () => {
-        const posts = await api
-            .get("/posts/")
-            .then((response) => {
-                return response.data
-            })
-            .catch((error) => {
-                throw new Error(error)
-            })
-        return posts
-    }
-    addPost = async (name, body, image) => {
+    signUp = async (user_name, email, password) => {
         const formData = new FormData();
-        formData.append("name", name);
-        formData.append("body", body);
-        formData.append("image", image);
+        formData.append("user_name", user_name);
+        formData.append("email", email);
+        formData.append("password", password);
         const savedPost = await api
-            .post("/posts/add/", formData)
-            .then((response) => {
-                return response.data
-            })
-            .catch((error) => {
-                throw new Error(error)
-            })
-        return savedPost
-    }
-    deletePost = async (id) => {
-        const response = await api
-            .delete("/posts/delete/" + id + "/")
-            .then((response) => {
-                return response.data
-            })
-            .catch((error) => {
-                throw new Error(error)
-            })
-        return response
-    }
-}
+          .post("/user/signup/", formData)
+          .then((response) => {
+            return response.data;
+          })
+          .catch((error) => {
+            throw new Error(error);
+          });
+        return savedPost;
+      };
+    };
