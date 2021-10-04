@@ -3,7 +3,7 @@ const initialState = {
         list: []
     },
     user: {
-        user_name: "",
+        username: "",
         email: "",
         token: "",
         token_expires_at: "",

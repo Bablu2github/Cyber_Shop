@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { signIn } from '../reducks/users/operations';
 
-const signin = () => {
-    return (
+
+
+const SignIn = () => {
+  const dispatch = useDispatch();
+
+  const [email, setEmail] = useState(""),
+    [password, setPassword] = useState("");
+
+  const inputEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const inputPassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const signInButton = () => {
+    dispatch(signIn(email, password));
+    setEmail("");
+    setPassword("");
+  };
+
+  return (
         <>
           
     <header>
@@ -116,11 +139,11 @@ const signin = () => {
                     <h5><b>SIGN IN</b></h5>
 
                     <div class="input">
-                        <input type="email" required placeholder="Email address" /> <br/>
-                        <input type="password" required placeholder="Password"/>
+                        <input type="email" onChange={inputEmail} value={email} required placeholder="Email address" /> <br/>
+                        <input type="password" onChange={inputPassword} value={password} required placeholder="Password"/>
                     </div>
 
-                    <button class="button">JOIN US</button>
+                    <button class="button" onClick={signInButton} >JOIN US</button>
                     <p>Already a Member? <u>Join Us.</u> </p>
                     
                 </div>
@@ -141,4 +164,4 @@ const signin = () => {
     )
 }
 
-export default signin
+export default SignIn

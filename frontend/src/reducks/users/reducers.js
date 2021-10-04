@@ -8,8 +8,11 @@ export const UserReducer = (state = initialState.user, action) => {
         ...state,
         ...action.payload,
       };
-
-   
+      case Actions.SIGN_IN:
+        return {
+          ...state,
+          ...action.payload,
+        };  
     default:
       return state;
   }

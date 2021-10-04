@@ -7,7 +7,6 @@ import {
 import {connectRouter, routerMiddleware} from "connected-react-router";
 import thunk from 'redux-thunk';
 
-import {PostsReducer} from '../posts/reducers';
 import { UserReducer } from '../users/reducers';
 
 
